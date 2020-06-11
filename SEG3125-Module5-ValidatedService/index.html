@@ -1,0 +1,99 @@
+<!-- This file contains a few elements adapted from the online tutoral -->
+<!-- on Bootstrap 4 as found here: https://www.w3schools.com/bootstrap4/default.asp -->
+<!-- as well as JQuery found here: https://www.w3schools.com/jquery/default.asp -->
+
+<!-- Images source: -->
+<!-- The two icons come from this bank of icons: https://icons8.com/icons.  I used the free downloadable ones.-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- The head should contain an appropriate title for your site -->
+<head>
+    <title>Module 5 - Labo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Style sheet (CSS) and JavaScript scripts necessary to use Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>    
+
+    <!-- Style sheet (CSS) and JavaScript scripts necessary to use JQuery as well as JQueryUI library -->
+    <!-- which is built on top of JQuery and offers additional possibilities -->
+    <!-- For example, JQuery UI has a datepicker which is popular and that we can use -->
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/excite-bike/jquery-ui.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
+    <!-- Your own script -->
+    <script src="scripts/service.js"></script>
+
+    <!-- Your own additional style sheet -->
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<!-- Using the collapsible Navbar, so we see the hamburger menu icon -->
+<!-- It really has become a standard. -->
+<!-- As your page is a vertical page (Module 4 requirement), you mus use the navbar -->
+<!-- to just jump to parts of the page. What I put as First/Second/Third here would -->
+<!-- be sections in your page. -->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#first"><img src="images/peigne.png" alt="logo" style="width:30px;">First</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" href="#second"><img src="images/tiger.png" alt="logo" style="width:30px;">Second</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#third">Third</a>
+      </li>   
+   </ul>
+  </div>  
+</nav>
+<br>
+
+<!-- Just arbitrary divisions to see the link from the NavBar -->
+<!-- Also, notice the use of the icon repeated from the menu to add grouping -->
+<div class="container" id="first">
+  <h3><img src="images/peigne.png" alt="logo" style="width:40px;">First Item</h3>
+  <p>Display text 1 </p>
+  <p>Display text 2 </p>
+  <p>Display text 3 </p>
+  <p>Display text 4 </p>
+  <p>Display text 5 </p>
+  <p>Display text 6 </p>
+</div>
+
+<div class="container" id="second">
+  <h3><img src="images/tiger.png" alt="logo" style="width:40px;">Second Item</h3>
+  <p>Display text 1 </p>
+  <p>Display text 2 </p>
+  <p>Display text 3 </p>
+  <p>Display text 4 </p>
+  <p>Display text 5 </p>
+  <p>Display text 6 </p>
+</div>
+
+<!-- This section contains elements to be validated -->
+<!-- Refer to the JavaScript file, where JQuery is used to listen to those inputs using the ids -->
+<div class="container" id="third">
+  <h3>Third Item</h3>
+  <p>Date: <input type="text" id="dateInput"></p>
+  <p>Phone Number Example <input value="(1234)" type="text" id="phone"></p>
+  <p>Credit Card: <input type="text" id="debit" title="We ask for your credit card number in case of no-show, 20$ will be charged."></p>
+</div>
+
+</body>
+</html>
+
+
