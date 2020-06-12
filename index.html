@@ -1,136 +1,38 @@
 <!-- This file contains many elements adapted from the online tutoral -->
 <!-- on Bootstrap 4 as found here: https://www.w3schools.com/bootstrap4/default.asp -->
-
 <!-- Images source:  -->
 <!-- jule.jpg taken from https://www.freepik.com/premium-vector/cartoon-successful-hairdresser_3951066.htm -->
 <!-- Erwind.jpb https://www.kijiji.ca/v-construction-trades-jobs/winnipeg/bicycle-mechanic/1499188319 -->
 <!-- carousel code from https://www.w3schools.com/bootstrap4/bootstrap_carousel.asp -->
-
+<!-- credit card code from https://bootstrapious.com/p/bootstrap-credit-card-form -->
 <!DOCTYPE html>
 <html lang="en">
-
 <!-- The head should contain an appropriate title for your site -->
+
 <head>
     <title>The scissoring</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- this is the stars code from https://www.w3schools.com/howto/howto_css_star_rating.asp -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/font-awesome-4.7.0/css/font-awesome.css">
     <!-- Style sheet (CSS) and JavaScript scripts necessary to use Bootstrap -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> 
-
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- Your own additional style sheet -->
     <link href="styles/style.css" rel="stylesheet" type="text/css">
     <link href="styles/font/stylesheet.css" rel="stylesheet" type="text/css">
 
-    <script type="text/javascript">
-
-        function fillModal() {
-            let service;
-            for ( const ser of document.getElementsByName("service") ) {
-                if ( ser.checked ) {
-                    service = ser.value;
-                }
-            }
-            let date = document.getElementById("dateTimeInput").value;
-            let name = document.getElementById("nameInput").value;
-            let email = document.getElementById("emailInput").value;
-            let phone = document.getElementById("phoneInput").value;
-
-            document.getElementById("modalService").innerHTML = service;
-            document.getElementById("modalDate").innerHTML = date;
-            document.getElementById("modalName").innerHTML = name;
-            document.getElementById("modalEmail").innerHTML = email;
-            document.getElementById("modalPhone").innerHTML = phone;
-        }
-
-        function updateBookingBtn() {
-            let service;
-            for ( const ser of document.getElementsByName("service") ) {
-                if ( ser.checked ) {
-                    service = ser.value;
-                }
-            }
-            if ( service === undefined ) {
-                document.getElementById("book").disabled = true;
-                return;
-            }
-
-            if ( document.getElementById("dateTimeInput").value == "" ) {
-                document.getElementById("book").disabled = true;
-                return;
-            }
-
-            if ( document.getElementById("nameInput").value == "" ) {
-                document.getElementById("book").disabled = true;
-                return;
-            }
-
-            if ( document.getElementById("emailInput").value == "" ) {
-                document.getElementById("book").disabled = true;
-                return;
-            }
-
-            if ( document.getElementById("phoneInput").value == "" ) {
-                document.getElementById("book").disabled = true;
-                return;
-            }
-
-            document.getElementById("book").disabled = false;
-        }
-
-        function goToHome() {
-            window.scrollTo(0,200);
-        }
-
-        function goToServices(){ 
-            window.scrollTo(0,900);            
-        }
-
-        function goToAboutAndProviders() {
-            window.scrollTo(0,3500);
-        }
-
-        function goToAppointment() {
-            window.scrollTo(0,2300);
-        }
-
-        var dryingIndex = 1;
-        var galleryDrying = [
-            "https://image.shutterstock.com/image-photo/professional-hairdresser-drying-hair-260nw-448766614.jpg",
-            "https://scstylecaster.files.wordpress.com/2015/04/hairdryers.jpg",
-            "https://i.ytimg.com/vi/XQXLt-zH3dw/maxresdefault.jpg",
-            "https://www.hotairbrushreviews.com/wp-content/uploads/2013/11/Styling-with-salon-hooded-hair-dryer.jpg"
-        ];
-
-        var haircutIndex = 1;
-        var galleryCut = [
-            "https://static.boredpanda.com/blog/wp-content/uploads/2017/07/before-after-extreme-haircut-transformations-user-submissions-fb-1__700-png.jpg",
-            "https://static.oprah.com/2017/03/201704-omag-bad-haircut-youtube-comp-949x534.jpg",
-            "https://lh3.googleusercontent.com/proxy/kSEvExSL7ida74O_stGrTjYT9vJaCZXVH2ZtqWhZLVOSh6BeICawPtHlvwSJ18wn8-BiiUmB0BF0fqRTaDnTkGJAihNk5SCxsJlGluR_t3bfWg_2T4EVO0fIWw61R0SOJab9rSAY8oyJTc-aOC3k5SY",
-            "https://static.oprah.com/2017/03/201704-omag-bad-haircut-diy-comp-949x534.jpg"
-        ];
-
-        var coloringIndex = 1;
-        var galleryColoring = [
-            "https://i.ytimg.com/vi/zDa8OxUttYs/maxresdefault.jpg",
-            "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/screen-shot-2017-05-05-at-13-15-50-1493985916.jpg",
-            "https://www.klinegroup.com/wp-content/uploads/hair-coloring-720x377.png",
-            "https://www.sephora.com/productimages/product/p437299-av-01-hero.jpg",
-            "https://i.ytimg.com/vi/KR4E0Qpbiso/maxresdefault.jpg"
-        ];
-    </script>
+    <script src="scripts/index.js"></script>
 </head>
 
-
 <body>
-
     <!-- Medium size container, padding 3, margins 3, background dark, text is white -->
     <!-- Should show the name of your company with an image or logo -->
     <!-- Bootstrap has its own font for H1, H2, p, etc.  -->
@@ -140,70 +42,89 @@
         <!-- logo from https://media.istockphoto.com/vectors/scissors-and-brush-icon-on-black-and-white-vector-backgrounds-vector-id831106346?k=6&m=831106346&s=612x612&w=0&h=a9IYlRyPFt6LyiI8U0rZCrx-UHH9SfcI29gPIUIXt7s= -->
         <div class="row">
             <div class="col-sm-4">
-                <img class="logo" src="./images/logo.svg"/>            
+                <!-- <img class="logo" src="./images/logo.svg" /> -->
+                <img class="logo" src="https://www.shareicon.net/data/512x512/2015/11/14/671809_people_512x512.png">
             </div>
             <div class="col-sm-8" style="text-align: left;">
                 <h1>Welcome to The scissoring</h1>
-            
                 <h2>THE salon for your hair</h2>
             </div>
         </div>
-        
     </div>
-
-        <!-- Bootstrap contains a grid system you can explore https://www.w3schools.com/bootstrap4/bootstrap_grid_system.asp -->
-        <!-- It can be useful for placement of information -->
+    <!-- Bootstrap contains a grid system you can explore https://www.w3schools.com/bootstrap4/bootstrap_grid_system.asp -->
+    <!-- It can be useful for placement of information -->
     <nav class="navbar navbar-expand-sm sticky-top bg-white container" style="margin-top: 0px;">
-            <div class="row p-3" style="width: 100%;">
-                <div class="col pl-5 header" onclick="goToHome();">Home</div>
-                <div class="col pl-5 header" onclick="goToServices();">Services</div>
-                <div class="col pl-5 header" onclick="goToAppointment();">Book an appointment</div>
-                <div class="col pl-5 header" onclick="goToAboutAndProviders();">Service Providers</div>
-                <div class="col pl-5 header"  onclick="goToAboutAndProviders();">Contact us</div>
+        <div class="row p-3" style="width: 100%;">
+            <div class="col pl-5 header" id="navHome">
+                <img 
+                    class="icon" 
+                    alt="logo"
+                    src="https://www.shareicon.net/data/512x512/2015/11/14/671809_people_512x512.png"/>
+                     Home
             </div>
+            <div class="col pl-5 header" id="navServices">
+                <img 
+                    class="icon" 
+                    alt="logo"
+                    src="./images/logo.svg"/>
+                    Services
+            </div>
+            <div class="col pl-5 header" id="navApp">
+                <img 
+                    class="icon" 
+                    alt="logo"
+                    src="https://www.clipartkey.com/mpngs/m/244-2444987_make-an-appointment-book-appointment-icon-png.png"/>
+                Book an appointment
+            </div>
+            <div class="col pl-5 header" id="navProv">
+                <img 
+                    class="icon" 
+                    alt="logo"
+                    src="https://i7.pngguru.com/preview/955/191/798/comb-hairdresser-computer-icons-beauty-parlour-hairstyle-hairdresser.jpg"/>
+                Experts
+            </div>
+            <div class="col pl-5 header" id="navContact">
+                <img 
+                    class="icon" 
+                    alt="logo"
+                    src="https://img.favpng.com/2/22/8/contact-us-icon-contact-icon-png-favpng-qzDxJgXiYan2Ng2TATnn4DAcb.jpg"/>
+                Contact us
+            </div>
+        </div>
     </nav>
-
     <!-- When you have messages to tell, remember that center align is not always the best choice -->
     <div class="container-md p-3 my-3 border">
-        
         <div id="gallery" class="carousel slide" data-ride="carousel">
-
             <!-- Indicators -->
             <ul class="carousel-indicators">
                 <li data-target="#demo" data-slide-to="0" class="active"></li>
                 <li data-target="#demo" data-slide-to="1"></li>
             </ul>
-
-                <!-- The slideshow -->
+            <!-- The slideshow -->
             <div class="carousel-inner">
-
                 <div class="carousel-item active">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRS3FcE3yvxAFqBtNqjmNx6eX86F57PXe2GLMIw0Tk98Rht09Jt&usqp=CAU" class="carousel-image">
                     <div class="carousel-caption" style="text-align: left; top: 5px;">
-                        <h3>About us</h3>
-                        <p>We are a group of artists using the latest technologies <br/> and equipment to provide you with <br/>YOUR prefered look.</p>
-                        <p>Our specialists are highly skilled, well respected <br/>and at the top of their field. <br/>They will make a miracle out of your hair<br/> and we guarantee that you will <br/>LOVE your new look.</p> 
+                        <p class="carousel-p">
+                            <img 
+                                alt="logo"
+                                class="carousel-icon"
+                                src="https://www.shareicon.net/data/512x512/2015/11/14/671809_people_512x512.png"/>
+                            <h3 class="header"> About us</h3>                            
+                        </p>
+                        <p>We are a group of artists using the latest technologies <br /> and equipment to provide you with <br />YOUR prefered look.</p>
+                        <p>Our specialists are highly skilled, well respected <br />and at the top of their field. <br />They will make a miracle out of your hair<br /> and we guarantee that you will <br />LOVE your new look.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="https://c.wallhere.com/photos/76/46/women_dark_hair_dark_background_model_smiling_portrait-182351.jpg!d" class="carousel-image">
                     <div class="carousel-caption" style="text-align: left; top: 10px;">
-                        <h3>About us</h3>
+                        <h3 class="header">About us</h3>
                         <p>We are a group of artists using the latest technologies and equipment to provide you with the YOUR prefered look.</p>
-                        <p>Our specialists are highly skilled,<br/> well respected <br/> and at the top of their field. <br/> They will make a miracle out of your hair<br/> and we guarantee that you will <br/>LOVE your new look.</p>  
+                        <p>Our specialists are highly skilled,<br /> well respected <br /> and at the top of their field. <br /> They will make a miracle out of your hair<br /> and we guarantee that you will <br />LOVE your new look.</p>
                     </div>
                 </div>
-               <!--  <div class="carousel-item">
-                    <img class="carousel-image" src="https://image.shutterstock.com/image-photo/beautiful-tender-girl-silk-top-260nw-1081362410.jpg">
-                    <div class="carousel-caption" style="top: 10px; text-align: left;">
-                        <h3>About us</h3>
-                        <p>We are a group of artists using the latest technologies <br/> and equipment to provide you with <br/>YOUR prefered look.</p>
-                        <p>Our specialists are highly skilled, well respected <br/>and at the top of their field. They will make a miracle out of your hair <br/>and we guarantee that you will <br/>LOVE your new look.</p> 
-                    </div>
-                </div> -->
-
             </div>
-
             <!-- Left and right controls -->
             <a class="carousel-control-prev" href="#gallery" data-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
@@ -213,16 +134,34 @@
             </a>
         </div>
     </div>
+    
+    <div class="container p-3 my-3 border">
+        <div class="row">
+            <img class="icon" src="./images/map-marker.png"/>
+            <h2>The salon's location</h2>            
+        </div>
+        <div class="container-md p-3 my-3 border">
+            <div class="row">
+                <div class="col col-sm-6 col-image">
+                    <img class="address" src="https://image.freepik.com/free-vector/street-map-with-pin-routes_23-2147622544.jpg"/>
+                </div>
+                <div class="col col-sm-6">
+                    <p>Adress: 52 scissoring street, Ottawa, Canada L5K 4S9</p>
+                    <p>phone: +1(123)-4567-9101</p>
+                    <p>email: the.scissoring@scissoring.im</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap has different types of tables https://www.w3schools.com/bootstrap4/bootstrap_tables.asp -->
     <!-- Might be (or not) useful to show some information to the user -->
     <div class="container p-3 my-3 border">
         <h2>Services for you</h2>
-        <p>These services are offered to you at the best prices and highest quality</p>            
-    
+        <p>These services are offered to you at the best prices and highest quality</p>
         <div class="container-md p-3 my-3 border">
             <div class="row">
-                <div class="col col-sm-6">
+                <div class="col col-sm-6 col-image">
                     <!-- <img id="haircutGallery" class="gallery" src="https://static.boredpanda.com/blog/wp-content/uploads/2017/07/before-after-extreme-haircut-transformations-user-submissions-fb-1__700-png.jpg" /> -->
                     <div id="haircutGallery" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
@@ -232,17 +171,14 @@
                             <li data-target="#demo" data-slide-to="2"></li>
                             <li data-target="#demo" data-slide-to="3"></li>
                         </ul>
-                            <!-- The slideshow -->
+                        <!-- The slideshow -->
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="https://static.boredpanda.com/blog/wp-content/uploads/2017/07/before-after-extreme-haircut-transformations-user-submissions-fb-1__700-png.jpg" class=" gallery">
                             </div>
                             <div class="carousel-item">
                                 <img src="https://static.oprah.com/2017/03/201704-omag-bad-haircut-youtube-comp-949x534.jpg" class=" gallery">
-                            </div>   
-                            <div class="carousel-item">
-                                <img src="https://lh3.googleusercontent.com/proxy/kSEvExSL7ida74O_stGrTjYT9vJaCZXVH2ZtqWhZLVOSh6BeICawPtHlvwSJ18wn8-BiiUmB0BF0fqRTaDnTkGJAihNk5SCxsJlGluR_t3bfWg_2T4EVO0fIWw61R0SOJab9rSAY8oyJTc-aOC3k5SY" class=" gallery">
-                            </div> 
+                            </div>
                             <div class="carousel-item">
                                 <img src="https://static.oprah.com/2017/03/201704-omag-bad-haircut-diy-comp-949x534.jpg" class=" gallery">
                             </div>
@@ -256,26 +192,25 @@
                         </a>
                     </div>
                 </div>
-                <div class="col col-sm-6">
-                    <h3>Haircut</h3>     
+                <div class="col col-sm-6 ">
+                    <h3>Haircut</h3>
                     <p>You have long hair and you think you might regret cutting it? Feer not. We guarantee that you will love your new look.</p>
-                    <p> Rating : 
+                    <p> Rating :
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                     </p>
-                    <p>  
+                    <p>
                         Price : 50.00$
                     </p>
                 </div>
             </div>
         </div>
-
         <div class="container-md p-3 my-3 border">
             <div class="row">
-                <div class="col col-sm-6">
+                <div class="col col-sm-6 col-image">
                     <!-- <img id="dryingGallery" class="gallery" src="https://image.shutterstock.com/image-photo/professional-hairdresser-drying-hair-260nw-448766614.jpg" /> -->
                     <div id="dryingGallery" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
@@ -285,22 +220,21 @@
                             <li data-target="#demo" data-slide-to="2"></li>
                             <li data-target="#demo" data-slide-to="3"></li>
                         </ul>
-                            <!-- The slideshow -->
+                        <!-- The slideshow -->
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="https://image.shutterstock.com/image-photo/professional-hairdresser-drying-hair-260nw-448766614.jpg" class=" gallery">
                             </div>
                             <div class="carousel-item">
                                 <img src="https://scstylecaster.files.wordpress.com/2015/04/hairdryers.jpg" class=" gallery">
-                            </div>   
+                            </div>
                             <div class="carousel-item">
                                 <img src="https://i.ytimg.com/vi/XQXLt-zH3dw/maxresdefault.jpg" class=" gallery">
-                            </div> 
+                            </div>
                             <div class="carousel-item">
                                 <img src="https://www.hotairbrushreviews.com/wp-content/uploads/2013/11/Styling-with-salon-hooded-hair-dryer.jpg" class=" gallery">
                             </div>
                         </div>
-            
                         <!-- Left and right controls -->
                         <a class="carousel-control-prev" href="#dryingGallery" data-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
@@ -311,9 +245,9 @@
                     </div>
                 </div>
                 <div class="col col-sm-6">
-                    <h3>Drying</h3>     
+                    <h3>Drying</h3>
                     <p></p>
-                    <p> Rating : 
+                    <p> Rating :
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
@@ -324,10 +258,9 @@
                 </div>
             </div>
         </div>
-
         <div class="container-md p-3 my-3 border">
             <div class="row">
-                <div class="col col-sm-6">
+                <div class="col col-sm-6 col-image">
                     <!-- <img id="coloringGallery" class="gallery" src="https://i.ytimg.com/vi/zDa8OxUttYs/maxresdefault.jpg" /> -->
                     <div id="coloringGallery" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
@@ -338,17 +271,17 @@
                             <li data-target="#demo" data-slide-to="3"></li>
                             <li data-target="#demo" data-slide-to="4"></li>
                         </ul>
-                            <!-- The slideshow -->
+                        <!-- The slideshow -->
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="https://i.ytimg.com/vi/zDa8OxUttYs/maxresdefault.jpg" class=" gallery">
                             </div>
                             <div class="carousel-item">
                                 <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/screen-shot-2017-05-05-at-13-15-50-1493985916.jpg" class=" gallery">
-                            </div>   
+                            </div>
                             <div class="carousel-item">
                                 <img src="https://www.klinegroup.com/wp-content/uploads/hair-coloring-720x377.png" class=" gallery">
-                            </div> 
+                            </div>
                             <div class="carousel-item">
                                 <img src="https://www.sephora.com/productimages/product/p437299-av-01-hero.jpg" class="gallery">
                             </div>
@@ -364,12 +297,11 @@
                             <span class="carousel-control-next-icon"></span>
                         </a>
                     </div>
-            
                 </div>
                 <div class="col col-sm-6">
-                    <h3>Coloring</h3>     
+                    <h3>Coloring</h3>
                     <p>Tired of your old hair? feeling adventurous? This is your opportunity? Our dying products are of the highest quality.</p>
-                    <p> Rating : 
+                    <p> Rating :
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
@@ -380,11 +312,9 @@
                 </div>
             </div>
         </div>
-
     </div>
-
     <div class="container-md p-3 my-3 border">
-        <row>           
+        <row>
             <h2>Our availability</h2>
             <p>The Scissoring salons are open 24/7, so feel free to drop by any time.</p>
             <div class="alert alert-info" role="alert">
@@ -393,8 +323,6 @@
             </div>
         </row>
     </div>
-    
-
     <!-- Collapsible with multiple items - accordion -->
     <!-- https://www.w3schools.com/bootstrap4/bootstrap_collapse.asp -->
     <!-- As we want to do a vertical navigation better suited for mobile design, an accordion pattern -->
@@ -404,243 +332,329 @@
         <p>Do you hate waiting? You can now book an appointment with us.</p>
         <div id="accordion">
             <div class="card">
-                <div class="card-header">
-                    <a class="card-link" data-toggle="collapse" href="#collapseService">Choosing a service</a>
+                <div class="card-header collapsed card-link text-primary" data-toggle="collapse" href="#collapseService">
+                    <!-- <a class="card-link" data-toggle="collapse" href="#collapseService">Choosing a service</a> -->
+                    Choosing a service
                 </div>
                 <div id="collapseService" class="collapse show" data-parent="#accordion">
                     <div class="card-body">
-                        <p></p>            
+                        <p></p>
                         <table class="table table-hover">
                             <thead>
-                            <tr>
-                                <th class="checkbox-col"></th>
-                                <th>Service</th>
-                                <th>Price</th>
-                            </tr>
+                                <tr>
+                                    <th class="checkbox-col"></th>
+                                    <th>Service</th>
+                                    <th>Price</th>
+                                </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>
-                                    <input type="radio" class="form-control" value="haircut" name="service" onchange="updateBookingBtn();" />
-                                </td>
-                                <td>Haircut</td>
-                                <td>50.00$</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="radio" value="drying" name="service" onchange="updateBookingBtn();"/>
-                                </td>
-                                <td>Drying</td>
-                                <td>20.00$</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="radio" value="coloring" name="service" onchange="updateBookingBtn();"/>
-                                </td>
-                                <td>Coloring</td>
-                                <td>30.00$</td>
-                            </tr>
+                                <tr>
+                                    <td>
+                                        <input type="radio" class="form-control" value="haircut" name="service"/>
+                                    </td>
+                                    <td>Haircut</td>
+                                    <td>50.00$</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="radio" value="drying" name="service"/>
+                                    </td>
+                                    <td>Drying</td>
+                                    <td>20.00$</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="radio" value="coloring" name="service"/>
+                                    </td>
+                                    <td>Coloring</td>
+                                    <td>30.00$</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-            <div class="card">
-                <div class="card-header">
-                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseDate">Choosing a date</a>
+                <div class="card">
+                    <div class="card-header collapsed card-link text-primary" data-toggle="collapse" href="#collapseHairdresser">
+                        <!-- <a class="" >Preferred hairdresser</a> -->
+                        Preferred hairdresser
+                    </div>
+                    <div id="collapseHairdresser" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            <p>Is there a hairdresser that you would prefer</p>
+                            <div class="container">
+                                <table class="table table-hover">
+                                    <tbody>
+                                        <tr name="table-row" value="no prefferences">
+                                            <td class="checkbox-col">
+                                                <input type="radio" name="hairdresserChoice" value="no prefferences"/>
+                                            </td>
+                                            <td>No prefferences</td>
+                                        </tr>
+                                        <tr name="table-row" value="Julius Caesar">
+                                            <td class="checkbox-col">
+                                                <input type="radio" name="hairdresserChoice" value="Julius Caesar"/>
+                                            </td>
+                                            <td>Julius Caesar</td>
+                                        </tr>
+                                        <tr name="table-row" value="Julius Caesar">
+                                            <td class="checkbox-col">
+                                                <input type="radio" name="hairdresserChoice" value="Anna Green" />
+                                            </td>
+                                            <td>Anna Green</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div id="collapseDate" class="collapse" data-parent="#accordion">
+                <div class="card">
+                    <div  class="card-header collapsed card-link text-primary" data-toggle="collapse" href="#collapseDate">
+                        <!-- <a class="collapsed card-link" data-toggle="collapse" href="#collapseDate">Choosing a date</a> -->
+                        Choosing a date
+                    </div>
+                    <div id="collapseDate" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            <p>When are you available?</p>
+                            <!-- Bootstrap has various input components. Some examples are given here: -->
+                            <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
+                            <div class="form-group row">
+                                <label for="dateTimeInput" class="col-2 col-form-label">Date and time</label>
+                                <div class="col-10">
+                                    <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="dateTimeInput" onchange="updateBookingBtn();" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header collapsed card-link text-primary" data-toggle="collapse" href="#collapseClientInfo">
+                        <!-- <a class="collapsed card-link" data-toggle="collapse" href="#collapseClientInfo">Your info</a> -->
+                        Your info
+                    </div>
+                    <div id="collapseClientInfo" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            <p>Please input your information so we can contact you</p>
+                            <div class="form-group row">
+                                <label for="nameInput" class="col-2 col-form-label">Name</label>
+                                <div class="col-10">
+                                    <input class="form-control" type="text" id="nameInput" placeholder="Please enter your name here" onchange="updateBookingBtn();" onmouseleave="updateBookingBtn();" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="emailInput" class="col-2 col-form-label">Email</label>
+                                <div class="col-10">
+                                    <input class="form-control" type="email" id="emailInput" placeholder="Please enter your email here" onchange="updateBookingBtn();" onmouseleave="updateBookingBtn();" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="phoneInput" class="col-2 col-form-label">Phone</label>
+                                <div class="col-10">
+                                    <input class="form-control" type="tel" id="phoneInput" placeholder="Please enter your phone number" onchange="updateBookingBtn();" onmouseleave="updateBookingBtn();" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header collapsed card-link text-primary" data-toggle="collapse" href="#collapsePayment">
+                        Payment information
+                    </div>
+                    <div id="collapsePayment" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            <p>To guarantee a reservation you need to input your payment information</p>
+                            <!-- payment section -->
+                            <div class="row">                                
+                                <div class="bg-white rounded-lg">
+                                    <!-- Credit card form tabs -->
+                                    <a data-toggle="pill" href="#nav-tab-card" class="nav-link active rounded-pill">
+                                        <i class="fa fa-credit-card"></i>
+                                        Credit Card
+                                    </a>
+                                    <!-- End -->
+                                    <!-- Credit card form content -->
+                                    <div class="tab-content">
+                                      <!-- credit card info-->
+                                        <div id="nav-tab-card" class="tab-pane fade show active">
+                                            <p class="alert alert-success" hidden="true">Some text success or error</p>
+                                        
+                                            <div class="form-group">
+                                                <label for="username">Full name (on the card)</label>
+                                                <input type="text" name="username" placeholder="Jason Doe" required class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cardNumber">Card number</label>
+                                                <div class="input-group">
+                                                    <input type="text" name="cardNumber" placeholder="Your card number" class="form-control" required>
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text text-muted">
+                                                            <i class="fa fa-cc-visa mx-1" style="content: \f1f0;"></i>
+                                                            <i class="fa fa-cc-amex mx-1"></i>
+                                                            <i class="fa fa-cc-mastercard mx-1"></i>
+                                                        </span>
+                                                    </div>
+                                                 </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-8">
+                                                    <div class="form-group">
+                                                        <label><span class="hidden-xs">Expiration</span></label>
+                                                            <div class="input-group">
+                                                                <input type="number" placeholder="MM" name="" class="form-control" min="1" max="12" required>
+                                                                <input type="number" placeholder="YY" name="" class="form-control" min="2020" required>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="form-group mb-4">
+                                                        <label data-toggle="tooltip" title="Three-digits code on the back of your card">CVV
+                                                            <i class="fa fa-question-circle"></i>
+                                                        </label>
+                                                        <input type="text" required class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm"> Confirm  </button>
+                                        </div>
+                                        <!-- End -->
+                                    </div>
+                                    <!-- End -->
+                                </div>
+                            </div>
+                        <!-- payment section -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center p-3 my-3 center-content">
+                <!-- Trigger the modal with a button -->
+                <button id="book" class="btn btn-outline-primary" disabled data-toggle="modal" data-target="#dialog" onclick="fillModal();" title="you will be able to proceed once you input all the necessary information in the book an appointment section">Confirm your appointment information</button>
+                <!-- Modal -->
+                <div class="modal fade" id="dialog" role="dialog">
+                    <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container text-left">
+                                    <div class="row p-3 my-3">
+                                        <div class="col col-sm-12 text-center">
+                                            <p>Confirming your choice</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-sm-4">
+                                            Service:
+                                        </div>
+                                        <div class="col col-sm-8">
+                                            <p id="modalService"></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-sm-4">
+                                            Hairdresser:
+                                        </div>
+                                        <div class="col col-sm-8">
+                                            <p id="modalHairdresser"></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-sm-4">
+                                            Date and time:
+                                        </div>
+                                        <div class="col col-sm-8">
+                                            <p id="modalDate"></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-sm-4">
+                                            Under the name:
+                                        </div>
+                                        <div class="col col-sm-8">
+                                            <p id="modalName"></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-sm-4">
+                                            Email:
+                                        </div>
+                                        <div class="col col-sm-8">
+                                            <p id="modalEmail"></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col col-sm-4">
+                                            Phone:
+                                        </div>
+                                        <div class="col col-sm-8">
+                                            <p id="modalPhone"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer" style="justify-content: space-between;">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Book an appointment</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p id="btnHint">Please make sure you entered all the necessary information to book an appointment.</p>
+        </div>
+        <!-- Presenting the staff with cards: https://www.w3schools.com/bootstrap4/bootstrap_cards.asp -->
+        <!-- Card columns allows multiple cards next to each other -->
+        <!-- The first card's button doesn't go anywhere, it could be a modal -->
+        <!-- My second card limits the information seen and uses collapsible to show more -->
+        <div class="container p-3">
+            <h2>Meet our team</h2>
+            <br />
+            <div class="card-columns">
+                <div class="card" style="width:200px">
+                    <img class="card-img-top profile" src="images/Jule.jpg" alt="Card image" style="width:100%">
                     <div class="card-body">
-                        <p>When are you available?</p>
-                        <!-- Bootstrap has various input components. Some examples are given here: -->
-                        <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
-                        <div class="form-group row">
-                            <label for="dateTimeInput" class="col-2 col-form-label">Date and time</label>
-                            <div class="col-10">
-                                <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="dateTimeInput"  onchange="updateBookingBtn();"/>
-                            </div>
+                        <h4 class="card-title">Julius Caesar</h4>
+                        <p class="card-text">The jack of all trades</p>
+                        <a href="#" class="btn btn-primary" data-toggle="collapse" data-target="#profile1">See Profile</a>
+                        <div id="profile1" class="collapse p-3">
+                            <p>With 10 years of experience under his belt, he is one of the top 5 hairdressers in the country.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseClientInfo">Your info</a>
-                </div>
-                <div id="collapseClientInfo" class="collapse" data-parent="#accordion">
+                <div class="card" style="width:200px">
+                    <img class="card-img-top profile" src="images/anna.jpg" alt="Card image" style="width:100%">
                     <div class="card-body">
-                        <p>Please input your information so we can contact you</p>
-
-                        <div class="form-group row">
-                            <label for="nameInput" class="col-2 col-form-label">Name</label>
-                            <div class="col-10">
-                                <input class="form-control" type="text" id="nameInput" placeholder="Please enter your name here" onchange="updateBookingBtn();" onmouseleave="updateBookingBtn();" />
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="emailInput" class="col-2 col-form-label">Email</label>
-                            <div class="col-10">
-                                <input class="form-control" type="email" id="emailInput" placeholder="Please enter your email here" onchange="updateBookingBtn();" onmouseleave="updateBookingBtn();"/>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="phoneInput" class="col-2 col-form-label">Phone</label>
-                            <div class="col-10">
-                                <input class="form-control" type="tel" id="phoneInput" placeholder="Please enter your phone number" onchange="updateBookingBtn();" onmouseleave="updateBookingBtn();"/>
-                            </div>
+                        <h4 class="card-title">Anna Green</h4>
+                        <p class="card-text">The cutting specialist</p>
+                        <!-- collapsible part -->
+                        <a href="#profile" class="btn btn-primary" data-toggle="collapse" data-target="#profile2">See Profile</a>
+                        <div id="profile2" class="collapse p-3">
+                            <p>Our creative up-and-coming expert. Just graduated top of her school from the most prestigious hairdressing school.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="row text-center p-3 my-3 center-content">
-            <!-- Trigger the modal with a button -->
-            <button id="book" class="btn btn-outline-primary" disabled data-toggle="modal" data-target="#dialog" onclick="fillModal();" title="you will be able to proceed once you input all the necessary information in the book an appointment section">Confirm your appointment information</button>
-        
-            <!-- Modal -->
-            <div class="modal fade" id="dialog" role="dialog">
-                <div class="modal-dialog">  
-                <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="container text-left">
-                                <div class="row p-3 my-3">
-                                    <div class="col col-sm-12 text-center">                                        
-                                        <p>Confirming your choice</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col col-sm-4">
-                                        Service:
-                                    </div>
-                                    <div class="col col-sm-8">
-                                        <p id="modalService"></p>                                        
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col col-sm-4">
-                                        Date and time:
-                                    </div>
-                                    <div class="col col-sm-8">
-                                        <p id="modalDate"></p>                                        
-                                    </div>
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col col-sm-4">
-                                        Under the name:
-                                    </div>
-                                    <div class="col col-sm-8">
-                                        <p id="modalName"></p>                                        
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col col-sm-4">
-                                        Email:
-                                    </div>
-                                    <div class="col col-sm-8">
-                                        <p id="modalEmail"></p>                                       
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col col-sm-4">
-                                        Phone:
-                                    </div>
-                                    <div class="col col-sm-8">
-                                        <p id="modalPhone"></p>                                       
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="modal-footer" style="justify-content: space-between;">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Book an appointment</button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>     
-                </div>
-            </div>
-        </div>
-
-        <p id="btnHint">Please make sure you entered all the necessary information to book an appointment.</p>
-    </div>
-
-    <!-- Presenting the staff with cards: https://www.w3schools.com/bootstrap4/bootstrap_cards.asp -->
-    <!-- Card columns allows multiple cards next to each other -->
-    <!-- The first card's button doesn't go anywhere, it could be a modal --> 
-    <!-- My second card limits the information seen and uses collapsible to show more -->
-    <div class="container p-3">
-        <h2>Meet our team</h2>
-        <br/>
-        <div class="card-columns">
-            <div class="card" style="width:200px">
-                <img class="card-img-top profile" src="images/Jule.jpg" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">Julius Caesar</h4>
-                    <p class="card-text">The jack of all trades</p>
-                    <a href="#" class="btn btn-primary" data-toggle="collapse" data-target="#profile1">See Profile</a>
-                    <div id="profile1" class="collapse p-3">
-                        <p>With 10 years of experience under his belt, he is one of the top 5 hairdressers in the country.</p>
+        <footer class="page-footer font-small container-md p-3 my-3 border bg-dark text-white text-left">
+            <div class="row">
+                <div class="col col-sm-4" style="margin-left: 50px;">
+                    <div class="row">
+                        Contact us:
+                    </div>
+                    <div class="row">
+                        phone: +1(123)-4567-9101
+                    </div>
+                    <div class="row">
+                        email: the.scissoring@scissoring.im
+                    </div>
+                    <div class="row">
+                        Adress: 52 scissoring street, Ottawa, Canada L5K 4S9
                     </div>
                 </div>
             </div>
-
-            <div class="card" style="width:200px">
-                <img class="card-img-top profile" src="images/anna.jpg" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">Anna Green</h4>
-                    <p class="card-text">The cutting specialist</p>
-                    <!-- collapsible part -->
-                    <a href="#profile" class="btn btn-primary" data-toggle="collapse" data-target="#profile2">See Profile</a>
-                    <div id="profile2" class="collapse p-3">
-                        <p>Our creative up-and-coming expert. Just graduated top of her school from the most prestigious hairdressing school.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="page-footer font-small container-md p-3 my-3 border bg-dark text-white text-left">
-        <div class="row">
-            <div class="col col-sm-4" style="margin-left: 50px;">
-                <div class="row">
-                    
-                Contact us:
-                </div>
-                <div class="row">
-                phone: +1(123)-4567-9101
-                    
-                </div>
-
-                <div class="row">
-                    
-                email: the.scissoring@scissoring.im  
-                </div>
-
-                <div class="row">
-                Adress: 52 scissoring street, Ottawa, Canada L5K 4S9
-                    
-                </div>
-
-            </div>
-        </div>
-    </footer>
-
-    <script type="text/javascript">
-        setInterval( function() {
-            // document.getElementById("haircutGallery").src = galleryCut[haircutIndex];
-            // document.getElementById("dryingGallery").src = galleryDrying[dryingIndex];
-            // document.getElementById("coloringGallery").src = galleryColoring[coloringIndex];
-            // coloringIndex = ( coloringIndex + 1 ) % galleryColoring.length;
-            // dryingIndex = ( dryingIndex + 1 ) % galleryDrying.length;
-            // haircutIndex = ( haircutIndex + 1 ) % galleryCut.length;
-        }, 5000);
-    </script>
+        </footer>
 </body>
+
 </html>
