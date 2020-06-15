@@ -5,6 +5,7 @@
 <!-- Erwind.jpb https://www.kijiji.ca/v-construction-trades-jobs/winnipeg/bicycle-mechanic/1499188319 -->
 <!-- carousel code from https://www.w3schools.com/bootstrap4/bootstrap_carousel.asp -->
 <!-- credit card code from https://bootstrapious.com/p/bootstrap-credit-card-form -->
+<!-- code for phone format inspired by https://stackoverflow.com/questions/17980061/how-to-change-phone-number-format-in-input-as-you-type -->
 <!DOCTYPE html>
 <html lang="en">
 <!-- The head should contain an appropriate title for your site -->
@@ -22,6 +23,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.62/jquery.inputmask.bundle.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -77,10 +80,7 @@
                 Book an appointment
             </div>
             <div class="col pl-5 header" id="navProv">
-                <img 
-                    class="icon" 
-                    alt="logo"
-                    src="https://i7.pngguru.com/preview/955/191/798/comb-hairdresser-computer-icons-beauty-parlour-hairstyle-hairdresser.jpg"/>
+                <img class="icon" alt="logo" src="https://i7.pngguru.com/preview/955/191/798/comb-hairdresser-computer-icons-beauty-parlour-hairstyle-hairdresser.jpg"/>
                 Experts
             </div>
             <div class="col pl-5 header" id="navContact">
@@ -110,7 +110,7 @@
                                 alt="logo"
                                 class="carousel-icon"
                                 src="https://www.shareicon.net/data/512x512/2015/11/14/671809_people_512x512.png"/>
-                            <h3 class="header"> About us</h3>                            
+                            <span class="h3-header">    About us</h3>                            
                         </p>
                         <p>We are a group of artists using the latest technologies <br /> and equipment to provide you with <br />YOUR prefered look.</p>
                         <p>Our specialists are highly skilled, well respected <br />and at the top of their field. <br />They will make a miracle out of your hair<br /> and we guarantee that you will <br />LOVE your new look.</p>
@@ -119,7 +119,13 @@
                 <div class="carousel-item">
                     <img src="https://c.wallhere.com/photos/76/46/women_dark_hair_dark_background_model_smiling_portrait-182351.jpg!d" class="carousel-image">
                     <div class="carousel-caption" style="text-align: left; top: 10px;">
-                        <h3 class="header">About us</h3>
+                        <p class="carousel-p">
+                            <img 
+                                alt="logo"
+                                class="carousel-icon"
+                                src="https://www.shareicon.net/data/512x512/2015/11/14/671809_people_512x512.png"/>
+                            <span class="h3-header"> About us</h3>                            
+                        </p>
                         <p>We are a group of artists using the latest technologies and equipment to provide you with the YOUR prefered look.</p>
                         <p>Our specialists are highly skilled,<br /> well respected <br /> and at the top of their field. <br /> They will make a miracle out of your hair<br /> and we guarantee that you will <br />LOVE your new look.</p>
                     </div>
@@ -137,8 +143,8 @@
     
     <div class="container p-3 my-3 border">
         <div class="row">
-            <img class="icon" src="./images/map-marker.png"/>
-            <h2>The salon's location</h2>            
+            <img class="icon outer-icon" src="./images/map-marker.png"/>
+            <h2>The salon's information</h2>            
         </div>
         <div class="container-md p-3 my-3 border">
             <div class="row">
@@ -154,10 +160,33 @@
         </div>
     </div>
 
+    <div class="container-md p-3 my-3 border">
+        <row>
+            <h2>
+                <img 
+                class="icon outer-icon" 
+                alt="logo"
+                src="https://toppng.com/uploads/preview/open-24-hrs-a-day-24-7-icon-11562879922ywviu22cjl.png"/>
+                Our availability
+            </h2>
+            <p>The Scissoring salons are open 6 days a week: from monday to saturday.</p>
+            <div class="alert alert-info" role="alert">
+                <span class="fas fa-info"></span>
+                To make sure you don't have to wait for other customers you can book an appointment by clicking <a class="alert-link" href="#" onclick="window.scrollBy(0, 250);">here</a>
+            </div>
+        </row>
+    </div>
+
     <!-- Bootstrap has different types of tables https://www.w3schools.com/bootstrap4/bootstrap_tables.asp -->
     <!-- Might be (or not) useful to show some information to the user -->
     <div class="container p-3 my-3 border">
-        <h2>Services for you</h2>
+        <h2>
+            <img 
+                class="icon outer-icon" 
+                alt="logo"
+                src="./images/logo.svg"/>
+            Services for you
+        </h2>
         <p>These services are offered to you at the best prices and highest quality</p>
         <div class="container-md p-3 my-3 border">
             <div class="row">
@@ -313,348 +342,446 @@
             </div>
         </div>
     </div>
-    <div class="container-md p-3 my-3 border">
-        <row>
-            <h2>Our availability</h2>
-            <p>The Scissoring salons are open 24/7, so feel free to drop by any time.</p>
-            <div class="alert alert-info" role="alert">
-                <span class="fas fa-info"></span>
-                To make sure you don't have to wait for other customers you can book an appointment by clicking <a class="alert-link" href="#" onclick="window.scrollBy(0, 250);">here</a>
+
+    <!-- Presenting the staff with cards: https://www.w3schools.com/bootstrap4/bootstrap_cards.asp -->
+    <!-- Card columns allows multiple cards next to each other -->
+    <!-- The first card's button doesn't go anywhere, it could be a modal -->
+    <!-- My second card limits the information seen and uses collapsible to show more -->
+    <div class="container p-3 my-3 border">
+        <h2>
+            <img 
+                class="icon outer-icon" 
+                alt="logo"
+                src="https://i7.pngguru.com/preview/955/191/798/comb-hairdresser-computer-icons-beauty-parlour-hairstyle-hairdresser.jpg"/>
+            Meet our team
+        </h2>
+        <br />
+        <div class="card-columns">
+            <div class="card" style="width:200px">
+                <img class="card-img-top profile" src="images/Jule.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Julius Caesar</h4>
+                    <p class="card-text">The jack of all trades</p>
+                    <a href="#" class="btn btn-outline-primary" data-toggle="collapse" data-toggle="tooltip" data-placement="top" title="By clicking here Julius's profile will be displayed" data-target="#profile1">See Profile</a>
+                    <div id="profile1" class="collapse p-3">
+                        <p>With 10 years of experience under his belt, he is one of the top 5 hairdressers in the country.</p>
+                    </div>
+                </div>
             </div>
-        </row>
+            <div class="card" style="width:200px">
+                <img class="card-img-top profile" src="images/anna.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Anna Green</h4>
+                    <p class="card-text">The cutting specialist</p>
+                    <!-- collapsible part -->
+                    <a href="#profile" class="btn btn-outline-primary" data-toggle="collapse" data-toggle="tooltip" data-placement="top" title="By clicking here Anna's profile will be displayed" data-target="#profile2">See Profile</a>
+                    <div id="profile2" class="collapse p-3">
+                        <p>Our creative up-and-coming expert. Just graduated top of her school from the most prestigious hairdressing school.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
     <!-- Collapsible with multiple items - accordion -->
     <!-- https://www.w3schools.com/bootstrap4/bootstrap_collapse.asp -->
     <!-- As we want to do a vertical navigation better suited for mobile design, an accordion pattern -->
     <!-- could work well.  You can use other patterns too.  This is just an example. -->
-    <div class="container">
-        <h2>Book an appointment</h2>
+    <div class="container p-3 my-3 border">
+        <h2>
+            <img 
+                class="icon outer-icon" 
+                alt="logo"
+                src="https://www.clipartkey.com/mpngs/m/244-2444987_make-an-appointment-book-appointment-icon-png.png"/>
+            Book an appointment
+        </h2>
         <p>Do you hate waiting? You can now book an appointment with us.</p>
-        <div id="accordion">
-            <div class="card">
-                <div class="card-header collapsed card-link text-primary" data-toggle="collapse" href="#collapseService">
-                    <!-- <a class="card-link" data-toggle="collapse" href="#collapseService">Choosing a service</a> -->
-                    Choosing a service
+
+        <div id="appointmentSection" class="container p-3 my-3 border">
+
+            <div class="container text-center center-content" id="breadInitial" name="appointmentSection">
+                <div id="successMsg">
+                    <p class="alert alert-success">Your appointment has been successfully booked</p>
                 </div>
-                <div id="collapseService" class="collapse show" data-parent="#accordion">
-                    <div class="card-body">
-                        <p></p>
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th class="checkbox-col"></th>
-                                    <th>Service</th>
-                                    <th>Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <input type="radio" class="form-control" value="haircut" name="service"/>
-                                    </td>
-                                    <td>Haircut</td>
-                                    <td>50.00$</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="radio" value="drying" name="service"/>
-                                    </td>
-                                    <td>Drying</td>
-                                    <td>20.00$</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="radio" value="coloring" name="service"/>
-                                    </td>
-                                    <td>Coloring</td>
-                                    <td>30.00$</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header collapsed card-link text-primary" data-toggle="collapse" href="#collapseHairdresser">
-                        <!-- <a class="" >Preferred hairdresser</a> -->
-                        Preferred hairdresser
-                    </div>
-                    <div id="collapseHairdresser" class="collapse" data-parent="#accordion">
-                        <div class="card-body">
-                            <p>Is there a hairdresser that you would prefer</p>
-                            <div class="container">
-                                <table class="table table-hover">
-                                    <tbody>
-                                        <tr name="table-row" value="no prefferences">
-                                            <td class="checkbox-col">
-                                                <input type="radio" name="hairdresserChoice" value="no prefferences"/>
-                                            </td>
-                                            <td>No prefferences</td>
-                                        </tr>
-                                        <tr name="table-row" value="Julius Caesar">
-                                            <td class="checkbox-col">
-                                                <input type="radio" name="hairdresserChoice" value="Julius Caesar"/>
-                                            </td>
-                                            <td>Julius Caesar</td>
-                                        </tr>
-                                        <tr name="table-row" value="Julius Caesar">
-                                            <td class="checkbox-col">
-                                                <input type="radio" name="hairdresserChoice" value="Anna Green" />
-                                            </td>
-                                            <td>Anna Green</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                <button id="startBookingBtn" class="btn btn-outline-primary" name="breadcrumb" target="breadService">Start booking application</button>
+            </div>
+
+            <div id="breadService" name="appointmentSection">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-1">                            
+                            <img class="icon" alt="logo" src="./images/logo.svg"/>
+                        </div>
+                        <div class="col-11">
+                            <ul class="breadcrumb">
+                                <li name="breadcrumb" target="breadService">service</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div  class="card-header collapsed card-link text-primary" data-toggle="collapse" href="#collapseDate">
-                        <!-- <a class="collapsed card-link" data-toggle="collapse" href="#collapseDate">Choosing a date</a> -->
-                        Choosing a date
-                    </div>
-                    <div id="collapseDate" class="collapse" data-parent="#accordion">
-                        <div class="card-body">
-                            <p>When are you available?</p>
-                            <!-- Bootstrap has various input components. Some examples are given here: -->
-                            <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
-                            <div class="form-group row">
-                                <label for="dateTimeInput" class="col-2 col-form-label">Date and time</label>
-                                <div class="col-10">
-                                    <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="dateTimeInput" onchange="updateBookingBtn();" />
-                                </div>
-                            </div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th class="checkbox-col"></th>
+                            <th>Service</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr target="serviceNext">
+                            <td>
+                                <input type="radio" class="form-control" value="haircut" name="service"/>
+                            </td>
+                            <td>Haircut</td>
+                            <td>50.00$</td>
+                        </tr>
+                        <tr target="serviceNext">
+                            <td>
+                                <input type="radio" value="drying" name="service"/>
+                            </td>
+                            <td>Drying</td>
+                            <td>20.00$</td>
+                        </tr>
+                        <tr target="serviceNext">
+                            <td>
+                                <input type="radio" value="coloring" name="service"/>
+                            </td>
+                            <td>Coloring</td>
+                            <td>30.00$</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <footer class="container">
+                    <div class="row center-content">
+                        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Choosing a service will unlock this button">
+                            <button id="serviceNext" class="btn btn-outline-primary" name="breadcrumb" target="breadHairdresser">Choose a hairdresser</button>
+                        </span>
+                    </div>                   
+                </footer>
+            </div>
+
+            <div id="breadHairdresser" name="appointmentSection">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-1">                            
+                            <img class="icon" alt="logo" src="https://i7.pngguru.com/preview/955/191/798/comb-hairdresser-computer-icons-beauty-parlour-hairstyle-hairdresser.jpg"/>
+                        </div>
+                        <div class="col-11">
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item" name="breadcrumb" target="breadService">service</li>
+                                <li class="breadcrumb-item" name="breadcrumb" target="breadHairdresser">hairdresser</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header collapsed card-link text-primary" data-toggle="collapse" href="#collapseClientInfo">
-                        <!-- <a class="collapsed card-link" data-toggle="collapse" href="#collapseClientInfo">Your info</a> -->
-                        Your info
-                    </div>
-                    <div id="collapseClientInfo" class="collapse" data-parent="#accordion">
-                        <div class="card-body">
-                            <p>Please input your information so we can contact you</p>
-                            <div class="form-group row">
-                                <label for="nameInput" class="col-2 col-form-label">Name</label>
-                                <div class="col-10">
-                                    <input class="form-control" type="text" id="nameInput" placeholder="Please enter your name here" onchange="updateBookingBtn();" onmouseleave="updateBookingBtn();" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="emailInput" class="col-2 col-form-label">Email</label>
-                                <div class="col-10">
-                                    <input class="form-control" type="email" id="emailInput" placeholder="Please enter your email here" onchange="updateBookingBtn();" onmouseleave="updateBookingBtn();" />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="phoneInput" class="col-2 col-form-label">Phone</label>
-                                <div class="col-10">
-                                    <input class="form-control" type="tel" id="phoneInput" placeholder="Please enter your phone number" onchange="updateBookingBtn();" onmouseleave="updateBookingBtn();" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header collapsed card-link text-primary" data-toggle="collapse" href="#collapsePayment">
-                        Payment information
-                    </div>
-                    <div id="collapsePayment" class="collapse" data-parent="#accordion">
-                        <div class="card-body">
-                            <p>To guarantee a reservation you need to input your payment information</p>
-                            <!-- payment section -->
-                            <div class="row">                                
-                                <div class="bg-white rounded-lg">
-                                    <!-- Credit card form tabs -->
-                                    <a data-toggle="pill" href="#nav-tab-card" class="nav-link active rounded-pill">
-                                        <i class="fa fa-credit-card"></i>
-                                        Credit Card
-                                    </a>
-                                    <!-- End -->
-                                    <!-- Credit card form content -->
-                                    <div class="tab-content">
-                                      <!-- credit card info-->
-                                        <div id="nav-tab-card" class="tab-pane fade show active">
-                                            <p class="alert alert-success" hidden="true">Some text success or error</p>
-                                        
-                                            <div class="form-group">
-                                                <label for="username">Full name (on the card)</label>
-                                                <input type="text" name="username" placeholder="Jason Doe" required class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="cardNumber">Card number</label>
-                                                <div class="input-group">
-                                                    <input type="text" name="cardNumber" placeholder="Your card number" class="form-control" required>
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text text-muted">
-                                                            <i class="fa fa-cc-visa mx-1" style="content: \f1f0;"></i>
-                                                            <i class="fa fa-cc-amex mx-1"></i>
-                                                            <i class="fa fa-cc-mastercard mx-1"></i>
-                                                        </span>
-                                                    </div>
-                                                 </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-8">
-                                                    <div class="form-group">
-                                                        <label><span class="hidden-xs">Expiration</span></label>
-                                                            <div class="input-group">
-                                                                <input type="number" placeholder="MM" name="" class="form-control" min="1" max="12" required>
-                                                                <input type="number" placeholder="YY" name="" class="form-control" min="2020" required>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <div class="form-group mb-4">
-                                                        <label data-toggle="tooltip" title="Three-digits code on the back of your card">CVV
-                                                            <i class="fa fa-question-circle"></i>
-                                                        </label>
-                                                        <input type="text" required class="form-control">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button type="button" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm"> Confirm  </button>
-                                        </div>
-                                        <!-- End -->
-                                    </div>
-                                    <!-- End -->
-                                </div>
-                            </div>
-                        <!-- payment section -->
-                        </div>
-                    </div>
+
+
+                <p>Is there a hairdresser that you would prefer</p>
+                <div class="container">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr name="table-row" value="no prefferences" target="hairdresserNext">
+                                <td class="checkbox-col">
+                                    <input type="radio" name="hairdresserChoice" value="no prefferences"/>
+                                </td>
+                                <td>No prefferences</td>
+                            </tr>
+                            <tr name="table-row" value="Julius Caesar" target="hairdresserNext">
+                                <td class="checkbox-col">
+                                    <input type="radio" name="hairdresserChoice" value="Julius Caesar"/>
+                                </td>
+                                <td>Julius Caesar</td>
+                            </tr>
+                            <tr name="table-row" value="Julius Caesar" target="hairdresserNext">
+                                <td class="checkbox-col">
+                                    <input type="radio" name="hairdresserChoice" value="Anna Green" />
+                                </td>
+                                <td>Anna Green</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <footer class="container">
+                        <div class="row center-content">
+                            <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Choosing a hairdresser prefference will unlock this button">
+                                <button id="hairdresserNext" class="btn btn-outline-primary" name="breadcrumb" target="breadDate">Choose a date and time for the appointment</button> 
+                            </span>             
+                        </div>                   
+                    </footer>
                 </div>
             </div>
-            <div class="row text-center p-3 my-3 center-content">
-                <!-- Trigger the modal with a button -->
-                <button id="book" class="btn btn-outline-primary" disabled data-toggle="modal" data-target="#dialog" onclick="fillModal();" title="you will be able to proceed once you input all the necessary information in the book an appointment section">Confirm your appointment information</button>
-                <!-- Modal -->
-                <div class="modal fade" id="dialog" role="dialog">
-                    <div class="modal-dialog">
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="container text-left">
-                                    <div class="row p-3 my-3">
-                                        <div class="col col-sm-12 text-center">
-                                            <p>Confirming your choice</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col col-sm-4">
-                                            Service:
-                                        </div>
-                                        <div class="col col-sm-8">
-                                            <p id="modalService"></p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col col-sm-4">
-                                            Hairdresser:
-                                        </div>
-                                        <div class="col col-sm-8">
-                                            <p id="modalHairdresser"></p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col col-sm-4">
-                                            Date and time:
-                                        </div>
-                                        <div class="col col-sm-8">
-                                            <p id="modalDate"></p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col col-sm-4">
-                                            Under the name:
-                                        </div>
-                                        <div class="col col-sm-8">
-                                            <p id="modalName"></p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col col-sm-4">
-                                            Email:
-                                        </div>
-                                        <div class="col col-sm-8">
-                                            <p id="modalEmail"></p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col col-sm-4">
-                                            Phone:
-                                        </div>
-                                        <div class="col col-sm-8">
-                                            <p id="modalPhone"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer" style="justify-content: space-between;">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Book an appointment</button>
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                            </div>
+
+            <div id="breadDate" name="appointmentSection">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-2">                            
+                            <!-- <img class="icon" alt="logo" src="https://i7.pngguru.com/preview/955/191/798/comb-hairdresser-computer-icons-beauty-parlour-hairstyle-hairdresser.jpg"/> -->
+                        </div>
+                        <div class="col-10">
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item" name="breadcrumb" target="breadService">service</li>
+                                <li class="breadcrumb-item" name="breadcrumb" target="breadHairdresser">hairdresser</li>
+                                <li class="breadcrumb-item" name="breadcrumb" target="breadDate">date</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+                
+                <p>When are you available?</p>
+                <!-- Bootstrap has various input components. Some examples are given here: -->
+                <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
+                <div class="form-group row">
+                    <label for="dateTimeInput" class="col-2 col-form-label">Date and time</label>
+                    <div class="col-10">
+                        <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="dateTimeInput" onchange="updateBookingBtn();" />
+                    </div>
+                </div>
+                <footer class="container">
+                    <div class="row center-content">
+                        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Choosing a date and time will unlock this button">
+                            <button class="btn btn-outline-primary" name="breadcrumb" target="breadPersonal">Add your personal information</button>             
+                        </span>
+                    </div>                   
+                </footer>
             </div>
-            <p id="btnHint">Please make sure you entered all the necessary information to book an appointment.</p>
-        </div>
-        <!-- Presenting the staff with cards: https://www.w3schools.com/bootstrap4/bootstrap_cards.asp -->
-        <!-- Card columns allows multiple cards next to each other -->
-        <!-- The first card's button doesn't go anywhere, it could be a modal -->
-        <!-- My second card limits the information seen and uses collapsible to show more -->
-        <div class="container p-3">
-            <h2>Meet our team</h2>
-            <br />
-            <div class="card-columns">
-                <div class="card" style="width:200px">
-                    <img class="card-img-top profile" src="images/Jule.jpg" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">Julius Caesar</h4>
-                        <p class="card-text">The jack of all trades</p>
-                        <a href="#" class="btn btn-primary" data-toggle="collapse" data-target="#profile1">See Profile</a>
-                        <div id="profile1" class="collapse p-3">
-                            <p>With 10 years of experience under his belt, he is one of the top 5 hairdressers in the country.</p>
+
+            <div id="breadPersonal" name="appointmentSection">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-2">                            
+                            <img class="icon" alt="logo" src="https://icons-for-free.com/iconfiles/png/512/instagram+profile+user+icon-1320184028326496024.png"/>
+                        </div>
+                        <div class="col-10">
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item" name="breadcrumb" target="breadService">service</li>
+                                <li class="breadcrumb-item" name="breadcrumb" target="breadHairdresser">hairdresser</li>
+                                <li class="breadcrumb-item" name="breadcrumb" target="breadDate">date</li>
+                                <li class="breadcrumb-item" name="breadcrumb" target="breadPersonal">personal</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="card" style="width:200px">
-                    <img class="card-img-top profile" src="images/anna.jpg" alt="Card image" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">Anna Green</h4>
-                        <p class="card-text">The cutting specialist</p>
-                        <!-- collapsible part -->
-                        <a href="#profile" class="btn btn-primary" data-toggle="collapse" data-target="#profile2">See Profile</a>
-                        <div id="profile2" class="collapse p-3">
-                            <p>Our creative up-and-coming expert. Just graduated top of her school from the most prestigious hairdressing school.</p>
+
+                
+                <p>Please input your information so we can contact you</p>
+                <div class="form-group row">
+                    <label for="nameInput" class="col-2 col-form-label">Name</label>
+                    <div class="col-10">
+                        <input class="form-control" type="text" id="nameInput" placeholder="Please enter your name here" onchange="updateBookingBtn();" onmouseleave="updateBookingBtn();" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="emailInput" class="col-2 col-form-label">Email</label>
+                    <div class="col-10">
+                        <input class="form-control" type="email" id="emailInput" placeholder="Please enter your email here" onchange="updateBookingBtn();" onmouseleave="updateBookingBtn();" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="phoneInput" class="col-2 col-form-label">Phone</label>
+                    <div class="col-10">
+                        <input class="form-control" type="tel" id="phoneInput" placeholder="Please enter your phone number" onchange="updateBookingBtn();" onmouseleave="updateBookingBtn();" />
+                    </div>
+                </div>
+                <footer class="container">
+                    <div class="row center-content">
+                        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Filling all the inputs will unlock this button">
+                            <button id="paymentNext" class="btn btn-outline-primary" name="breadcrumb" target="breadPayment">Add payment information</button>             
+                        </span>
+                    </div>                   
+                </footer>
+            </div>
+
+            <div id="breadPayment" name="appointmentSection">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-2">                            
+                            <img class="icon" alt="logo" src="https://w7.pngwing.com/pngs/951/395/png-transparent-black-check-logo-payment-card-credit-card-computer-icons-cheque-payment-icon-credit-payment-icon-miscellaneous-text-trademark.png"/>
+                        </div>
+                        <div class="col-10">
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item" name="breadcrumb" target="breadService">service</li>
+                                <li class="breadcrumb-item" name="breadcrumb" target="breadHairdresser">hairdresser</li>
+                                <li class="breadcrumb-item" name="breadcrumb" target="breadDate">date</li>
+                                <li class="breadcrumb-item" name="breadcrumb" target="breadPersonal">personal</li>
+                                <li class="breadcrumb-item" name="breadcrumb" target="breadPayment">payment</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+
+                
+                <p>To guarantee a reservation you need to input your payment information</p>
+                <div class="container mx-auto">
+                    <!-- payment section -->
+                    <div class="row center-content">                                
+                        <div class="bg-white rounded-lg">
+                            <!-- Credit card form tabs -->
+                            <a data-toggle="pill" href="#nav-tab-card" class="nav-link active rounded-pill">
+                                <i class="fa fa-credit-card"></i>
+                                Credit Card
+                            </a>
+                            <!-- End -->
+                            <!-- Credit card form content -->
+                            <div class="tab-content">
+                              <!-- credit card info-->
+                                <div id="nav-tab-card" class="tab-pane fade show active">
+                                    <p class="alert alert-success" hidden="true">Some text success or error</p>
+                                
+                                    <div class="form-group">
+                                        <label for="username">Full name (on the card)</label>
+                                        <input type="text" name="paymentInfoField" placeholder="Jason Doe" required class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cardNumber">Card number</label>
+                                        <div class="input-group">
+                                            <input type="tel" name="paymentInfoField" id="cardNum" placeholder="Your card number" class="form-control" required>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text text-muted">
+                                                    <i class="fa fa-cc-visa mx-1"></i>
+                                                    <i class="fa fa-cc-amex mx-1"></i>
+                                                    <i class="fa fa-cc-mastercard mx-1"></i>
+                                                </span>
+                                            </div>
+                                         </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <div class="form-group">
+                                                <label><span class="hidden-xs">Expiration</span></label>
+                                                    <div class="input-group">
+                                                        <input type="number" placeholder="MM" name="paymentInfoField" class="form-control" min="1" max="12" required>
+                                                        <input type="number" placeholder="YY" name="paymentInfoField" class="form-control" min="2020" required>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-4">
+                                                <label data-toggle="tooltip" title="Three-digits code on the back of your card">CVV
+                                                    <i class="fa fa-question-circle"></i>
+                                                </label>
+                                                <input type="tel" min="0" max="999" name="paymentInfoField" id="cvvNum" required class="form-control" minlength="3" maxlength="3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <button type="button" class="btn btn-outline-primary btn-block rounded-pill shadow-sm"> Confirm  </button> -->
+                                </div>
+                                <!-- End -->
+                            </div>
+                            <!-- End -->
+                        </div>
+                    </div>
+                    <!-- payment section -->
+                </div>
+                <footer class="container">
+                    <div class="row center-content">
+                        <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Filling all the inputs will unlock this button">
+                            <button class="btn btn-outline-primary" id="finalBreadBtn" name="breadcrumb" target="breadInitial">Confirm appointment</button>      
+                        </span>
+                    </div>                   
+                </footer>
             </div>
         </div>
-        <footer class="page-footer font-small container-md p-3 my-3 border bg-dark text-white text-left">
-            <div class="row">
-                <div class="col col-sm-4" style="margin-left: 50px;">
-                    <div class="row">
-                        Contact us:
-                    </div>
-                    <div class="row">
-                        phone: +1(123)-4567-9101
-                    </div>
-                    <div class="row">
-                        email: the.scissoring@scissoring.im
-                    </div>
-                    <div class="row">
-                        Adress: 52 scissoring street, Ottawa, Canada L5K 4S9
+
+        <div class="row text-center p-3 my-3 center-content">
+            <!-- Trigger the modal with a button -->
+            <!-- <button id="book" class="btn btn-outline-primary" disabled data-toggle="modal" data-target="#dialog" onclick="fillModal();" title="you will be able to proceed once you input all the necessary information in the book an appointment section">Confirm your appointment information</button> -->
+            <!-- Modal -->
+            <div class="modal fade" id="dialog" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container text-left">
+                                <div class="row p-3 my-3">
+                                    <div class="col col-sm-12 text-center">
+                                        <p>Confirming your choice</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-sm-4">
+                                        Service:
+                                    </div>
+                                    <div class="col col-sm-8">
+                                        <p id="modalService"></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-sm-4">
+                                        Hairdresser:
+                                    </div>
+                                    <div class="col col-sm-8">
+                                        <p id="modalHairdresser"></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-sm-4">
+                                        Date and time:
+                                    </div>
+                                    <div class="col col-sm-8">
+                                        <p id="modalDate"></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-sm-4">
+                                        Under the name:
+                                    </div>
+                                    <div class="col col-sm-8">
+                                        <p id="modalName"></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-sm-4">
+                                        Email:
+                                    </div>
+                                    <div class="col col-sm-8">
+                                        <p id="modalEmail"></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-sm-4">
+                                        Phone:
+                                    </div>
+                                    <div class="col col-sm-8">
+                                        <p id="modalPhone"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer" style="justify-content: space-between;">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Book an appointment</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </footer>
+        </div>
+
+        <p id="btnHint">Please make sure you entered all the necessary information to book an appointment.</p>
+    </div>
+    <footer class="page-footer font-small container-md p-3 my-3 border bg-dark text-white text-left">
+        <div class="row">
+            <div class="col col-sm-4" style="margin-left: 50px;">
+                <div class="row">
+                    Contact us:
+                </div>
+                <div class="row">
+                    phone: +1(123)-4567-9101
+                </div>
+                <div class="row">
+                    email: the.scissoring@scissoring.im
+                </div>
+                <div class="row">
+                    Adress: 52 scissoring street, Ottawa, Canada L5K 4S9
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

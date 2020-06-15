@@ -1,4 +1,6 @@
-
+:root {
+	--hover-color: #007bff;
+}
 /* Style sheet
    color picker www.w3schools.com/colors/colors_picker.asp
 */
@@ -12,7 +14,8 @@ h1 {
 }
 
 div.header:hover {
-	opacity: 0.5;
+	/*opacity: 0.5;*/
+	color: var(--hover-color);
 }
 
 .fa-star {
@@ -104,6 +107,11 @@ h3.header {
 	font-size: 3.5vw;
 }
 
+.h3-header {
+	font-family: "Modern serif", "dancing_script_otregular"; 
+	font-size: 3.5vw;
+}
+
 h2 {
 	font-family: "Modern serif", "dancing_script_otregular";
 	font-style: bold;
@@ -129,8 +137,53 @@ img.carousel-icon {
 	filter: invert(100);
 	width: 3.5vw;
 	height: 3.5vw;
+	margin-top: 10px;
+	margin-right: 10px;
 }
 
 p.carousel-p {
 	display: flex;
+}
+
+.outer-icon {
+	margin-bottom: 15px;
+}
+
+a:hover {
+	color: var(--hover-color);
+}
+
+/*breadcrumb section*/
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: inherit;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+  padding: 0px 8px;
+  content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+  color: #007bff !important;
+  text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  /*text-decoration: underline;*/
+}
+
+li:hover {
+	color: var(--hover-color);
 }

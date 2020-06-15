@@ -19,32 +19,17 @@ function updateBookingBtn() {
             service = ser.value;
         }
     }
-    if (service === undefined) {
-        document.getElementById("book").disabled = true;
+    if (service === undefined ||
+    	$("#dateTimeInput").prop("value") == "" ||
+    	$("#nameInput").prop("value") == "" ||
+    	document.getElementById("emailInput").value == "" ||
+    	document.getElementById("phoneInput").value.includes("_") ||
+    	document.getElementById("phoneInput").value == "" ){
+        $("#paymentNext").attr("disabled", true);
+    	// debugger;
         return;
     }
-
-    if ( $("#dateTimeInput").prop("value") == "") {
-        document.getElementById("book").disabled = true;
-        return;
-    }
-
-    if ( $("#nameInput").prop("value") == "" ) {
-        document.getElementById("book").disabled = true;
-        return;
-    }
-
-    if (document.getElementById("emailInput").value == "") {
-        document.getElementById("book").disabled = true;
-        return;
-    }
-
-    if (document.getElementById("phoneInput").value == "") {
-        document.getElementById("book").disabled = true;
-        return;
-    }
-
-    document.getElementById("book").disabled = false;
+    $("#paymentNext").attr("disabled", false);
 }
 
 $("#navHome").click(function() {
@@ -113,4 +98,68 @@ $(document).ready(function() {
 		}
 		// $(this.cells[0].children[0]).prop("checked", true);
 	});
+
+	$("tr").click(function() {
+		$("#"+this.attributes["target"].value).attr('disabled', false);
+		// $("#" + ).attr('disabled', false);
+	});
+
+	$("[name='breadcrumb']").click(function() {
+		// hide all
+		$("[name='appointmentSection']").hide();
+		// debugger;
+		$("#"+this.attributes["target"].value).show();
+	});
+
+	$("[name='appointmentSection']").hide();
+	$("#successMsg").hide();
+	$("#breadInitial").show();
+
+	 $("#serviceNext").attr('disabled', true);
+	 $("#hairdresserNext").attr('disabled', true);
+	 $("#paymentNext").attr('disabled', true);
+	 $("#finalBreadBtn").attr('disabled', true);
+	 
+
+	$("#startBookingBtn").click(function() {
+		this.style.display = "none";
+	});
+
+	$("#finalBreadBtn").click(function() {
+		$("#successMsg").show();
+	});
+
+	$("[name='paymentInfoField']").on('input', function(){
+		let list = $("[name='paymentInfoField']");
+		// console.log(list);
+	 	for(let i=0; i<list.length; i++){
+	 		if( list[i].value == "" || list[i].attributes["type"] == "tel" && list[i].value.includes("_") ) {
+	 			$("#finalBreadBtn").attr("disabled", true);
+	 			return;
+	 		}
+
+	 		$("#finalBreadBtn").attr("disabled", false);
+	 	}
+	});
+
+
+	var phones = [{ "mask": "(###) ###-####"}];
+    $('#phoneInput').inputmask({ 
+        mask: phones, 
+        greedy: false, 
+        definitions: { '#': { validator: "[0-9]", cardinality: 1}} });
+
+    var card = [{ "mask": "#### #### #### ####"}];
+    $('#cardNum').inputmask({ 
+        mask: card, 
+        greedy: false, 
+        definitions: { '#': { validator: "[0-9]", cardinality: 1}} });
+
+    var cvvn = [{ "mask": "###"}];
+    $('#cvvNum').inputmask({ 
+        mask: cvvn, 
+        greedy: false, 
+        definitions: { '#': { validator: "[0-9]", cardinality: 1}} });
+    // $('#cvvNum').inputmask("999");
+
 });
