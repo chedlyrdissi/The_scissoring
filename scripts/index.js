@@ -272,6 +272,108 @@ $(document).ready(function() {
     $("#dateMsgSuccess").hide();
     $("#dateMsgDangerFormat").hide();
     $("#dateMsgDangerAv").hide();
+
+
+    $("#nameInput").on('input', function(){
+    	if (this.value == '') {
+    		$("#nameInput").removeClass("is-valid");
+    		$("#nameInput").addClass("is-invalid");
+    	} else {
+    		$("#nameInput").removeClass("is-invalid");
+    		$("#nameInput").addClass("is-valid");
+    	}
+    });
+
+    $("#emailInput").on('input', function(){
+    	if (this.value == '') {
+    		$("#emailInput").removeClass("is-valid");
+    		$("#emailInput").addClass("is-invalid");
+    	} else {
+    		$("#emailInput").removeClass("is-invalid");
+    		$("#emailInput").addClass("is-valid");
+    	}
+    });
+    $("#phoneInput").on('input', function(){
+    	if (this.value == '' ||
+    		this.value.includes("_")) {
+    		$("#phoneInput").removeClass("is-valid");
+    		$("#phoneInput").addClass("is-invalid");
+    	} else {
+    		$("#phoneInput").removeClass("is-invalid");
+    		$("#phoneInput").addClass("is-valid");
+    	}
+    });
+    $("#cardNum").on('input', function(){
+    	if (this.value == '' ||
+    		this.value.includes("_")) {
+    		$("#cardNum").removeClass("is-valid");
+    		$("#cardNum").addClass("is-invalid");
+    	} else {
+    		$("#cardNum").removeClass("is-invalid");
+    		$("#cardNum").addClass("is-valid");
+    	}
+    });
+    $("#cvvNum").on('input', function(){
+    	if (this.value == '' ||
+    		this.value.includes("_")) {
+    		$("#cvvNum").removeClass("is-valid");
+    		$("#cvvNum").addClass("is-invalid");
+    	} else {
+    		$("#cvvNum").removeClass("is-invalid");
+    		$("#cvvNum").addClass("is-valid");
+    	}
+    });
+    $("#nameFieldPayment").on('input', function(){
+    	if (this.value == '') {
+    		$("#nameFieldPayment").removeClass("is-valid");
+    		$("#nameFieldPayment").addClass("is-invalid");
+    	} else {
+    		$("#nameFieldPayment").removeClass("is-invalid");
+    		$("#nameFieldPayment").addClass("is-valid");
+    	}
+    });
+    $("#paymentYear").on('input', function(){
+    	if (this.value == '' ||
+    		parseInt(this.value) > 31 ||
+    		parseInt(this.value) < 0) {
+    		$("#paymentYear").removeClass("is-valid");
+    		$("#paymentYear").addClass("is-invalid");
+    	} else {
+    		$("#paymentYear").removeClass("is-invalid");
+    		$("#paymentYear").addClass("is-valid");
+    	}
+    });
+    $("#paymentMonth").on('input', function(){
+    	if (this.value == '' ||
+    		parseInt(this.value) > 31 ||
+    		parseInt(this.value) < 0) {
+    		$("#paymentMonth").removeClass("is-valid");
+    		$("#paymentMonth").addClass("is-invalid");
+    	} else {
+    		$("#paymentMonth").removeClass("is-invalid");
+    		$("#paymentMonth").addClass("is-valid");
+    	}
+    });
+
+    $("#navHome").click(function(){
+    	window.scrollTo(0,150);
+    });
+    $("#navServices").click(function(){
+    	window.scrollTo(0,1700);
+    });
+    $("#navApp").click(function(){
+    	window.scrollTo(0,3600);
+    });
+    $("#navProv").click(function(){
+    	window.scrollTo(0,3000);
+    });
+    $("#navContact").click(function(){
+    	window.scrollTo(0,4000);
+    });
+    $("#goToApp").click(function(){
+    	window.scrollTo(0,3600);
+    });
+
 });
 
 function getHairdresser() {

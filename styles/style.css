@@ -187,3 +187,11 @@ ul.breadcrumb li a:hover {
 li:hover {
 	color: var(--hover-color);
 }
+
+.space {
+	margin-right: 20px;
+}
+
+.no-margin {
+	margin-top: 5px;
+}

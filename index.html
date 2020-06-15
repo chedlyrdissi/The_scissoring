@@ -81,7 +81,7 @@
             </div>
             <div class="col pl-5 header" id="navProv">
                 <img class="icon" alt="logo" src="https://i7.pngguru.com/preview/955/191/798/comb-hairdresser-computer-icons-beauty-parlour-hairstyle-hairdresser.jpg"/>
-                Experts
+                Our experts
             </div>
             <div class="col pl-5 header" id="navContact">
                 <img 
@@ -160,7 +160,7 @@
         </div>
     </div>
 
-    <div class="container-md p-3 my-3 border">
+    <div class="container p-3 my-3 border">
         <row>
             <h2>
                 <img 
@@ -172,7 +172,7 @@
             <p>The Scissoring salons are open 6 days a week: from monday to saturday.</p>
             <div class="alert alert-info" role="alert">
                 <span class="fas fa-info"></span>
-                To make sure you don't have to wait for other customers you can book an appointment by clicking <a class="alert-link" href="#" onclick="window.scrollBy(0, 250);">here</a>
+                To make sure you don't have to wait for other customers you can book an appointment by clicking <a class="alert-link" href="#" id="goToApp">here</a>
             </div>
         </row>
     </div>
@@ -362,7 +362,15 @@
                 <div class="card-body">
                     <h4 class="card-title">Julius Caesar</h4>
                     <p class="card-text">The jack of all trades</p>
-                    <a href="#" class="btn btn-outline-primary" data-toggle="collapse" data-toggle="tooltip" data-placement="top" title="By clicking here Julius's profile will be displayed" data-target="#profile1">See Profile</a>
+                    <div class="row p-1">
+                        <a href="#" class="btn btn-outline-primary" data-toggle="collapse" data-toggle="tooltip" data-placement="top" title="By clicking here Julius's profile will be displayed" data-target="#profile1">See Profile</a>
+                    </div>
+                    <div class="row p-1">
+                        <a href="#" class="btn btn-outline-primary" data-toggle="collapse" data-target="#av1">See Availability</a>
+                    </div>
+                    <div id="av1" class="collapse p-3">
+                        <p>monday, wednesday, friday.</p>
+                    </div>
                     <div id="profile1" class="collapse p-3">
                         <p>With 10 years of experience under his belt, he is one of the top 5 hairdressers in the country.</p>
                     </div>
@@ -374,7 +382,15 @@
                     <h4 class="card-title">Anna Green</h4>
                     <p class="card-text">The cutting specialist</p>
                     <!-- collapsible part -->
-                    <a href="#profile" class="btn btn-outline-primary" data-toggle="collapse" data-toggle="tooltip" data-placement="top" title="By clicking here Anna's profile will be displayed" data-target="#profile2">See Profile</a>
+                    <div class="row p-1">                        
+                        <a href="#profile" class="btn btn-outline-primary" data-toggle="collapse" data-toggle="tooltip" data-placement="top" title="By clicking here Anna's profile will be displayed" data-target="#profile2">See Profile</a>
+                    </div>
+                    <div class="row p-1">
+                        <a href="#" class="btn btn-outline-primary" data-toggle="collapse" data-target="#av2">See Availability</a>
+                    </div>
+                    <div id="av2" class="collapse p-3">
+                        <p>tuesday, thirsday, saturday.</p>
+                    </div>
                     <div id="profile2" class="collapse p-3">
                         <p>Our creative up-and-coming expert. Just graduated top of her school from the most prestigious hairdressing school.</p>
                     </div>
@@ -399,7 +415,7 @@
 
         <div id="appointmentSection" class="container p-3 my-3 border">
 
-            <div class="container text-center center-content" id="breadInitial" name="appointmentSection">
+            <div class="container text-center center-content no-margin" id="breadInitial" name="appointmentSection">
                 <div id="successMsg">
                     <p class="alert alert-success">Your appointment has been successfully booked</p>
                 </div>
@@ -407,7 +423,7 @@
             </div>
 
             <div id="breadService" name="appointmentSection">
-                <div class="container">
+                <div class="container no-margin">
                     <div class="row">
                         <div class="col-1">                            
                             <img class="icon" alt="logo" src="./images/logo.svg"/>
@@ -419,6 +435,7 @@
                         </div>
                     </div>
                 </div>
+                <p>Pick the service that you wish to be offered.</p>
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -462,7 +479,7 @@
 
             <div id="breadHairdresser" name="appointmentSection">
 
-                <div class="container">
+                <div class="container no-margin">
                     <div class="row">
                         <div class="col-1">                            
                             <img class="icon" alt="logo" src="https://i7.pngguru.com/preview/955/191/798/comb-hairdresser-computer-icons-beauty-parlour-hairstyle-hairdresser.jpg"/>
@@ -477,7 +494,7 @@
                 </div>
 
 
-                <p>Is there a hairdresser that you would prefer</p>
+                <p>Is there a hairdresser that you would prefer ?</p>
                 <div class="container">
                     <table class="table table-hover">
                         <tbody>
@@ -513,12 +530,12 @@
 
             <div id="breadDate" name="appointmentSection">
 
-                <div class="container">
+                <div class="container no-margin">
                     <div class="row">
-                        <div class="col-2">                            
-                            <!-- <img class="icon" alt="logo" src="https://i7.pngguru.com/preview/955/191/798/comb-hairdresser-computer-icons-beauty-parlour-hairstyle-hairdresser.jpg"/> -->
+                        <div class="col-1">                            
+                            <img class="icon" alt="logo" src="https://image.flaticon.com/icons/png/512/1054/1054793.png"/>
                         </div>
-                        <div class="col-10">
+                        <div class="col-11">
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item" name="breadcrumb" target="breadService">service</li>
                                 <li class="breadcrumb-item" name="breadcrumb" target="breadHairdresser">hairdresser</li>
@@ -529,28 +546,27 @@
                 </div>
                 
                 <p>When are you available?</p>
+                <p>Let's set a date and time for your appointment.</p>
                 <!-- Bootstrap has various input components. Some examples are given here: -->
                 <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
-                <div class="row">
-                    Hairdresser: <span id="chosenHairdresser"></span>
+                <div class="row p-2">
+                    <h2>Chosen Hairdresser:</h2><span class="space"></span> <span id="chosenHairdresser"></span>
                 </div>
-                <div class="">
-                    Availability: <span id="avDays"></span>
+                <div class="row p-2">
+                    <h2>Our Expert's Availability:</h2><span class="space"></span> <span id="avDays"></span>
                 </div>
                 <div class="form-group row">
                     <label for="dateTimeInput" class="col-2 col-form-label">Date and time</label>
                     <div class="col-10">
-                        <input 
-                            class="form-control" 
-                            type="datetime-local"
-                            value="2020-06-14T08:00:00"
-                            id="dateTimeInput"/>
+                        <div class="row">
+                            <input class="form-control" type="datetime-local" value="" id="dateTimeInput"/>
+                        </div>
+                        <div class="row p-1">
+                            <p class="alert alert-success" id="dateMsgSuccess">This date works for us</p>
+                            <p class="alert alert-danger" id="dateMsgDangerFormat">Date format is invalid. Please follow the format requested.</p>
+                            <p class="alert alert-danger" id="dateMsgDangerAv">The day you have chosen doesn't work for us.</p>
+                        </div>    
                     </div>
-                </div>
-                <div class="row">
-                    <p class="alert alert-success" id="dateMsgSuccess">This date works for us</p>
-                    <p class="alert alert-danger" id="dateMsgDangerFormat">Date format is invalid. Please follow the format requested.</p>
-                    <p class="alert alert-danger" id="dateMsgDangerAv">The day you have chosen doesn't work for us.</p>
                 </div>
                 <footer class="container">
                     <div class="row center-content">
@@ -563,12 +579,12 @@
 
             <div id="breadPersonal" name="appointmentSection">
 
-                <div class="container">
+                <div class="container no-margin">
                     <div class="row">
-                        <div class="col-2">                            
+                        <div class="col-1">                            
                             <img class="icon" alt="logo" src="https://icons-for-free.com/iconfiles/png/512/instagram+profile+user+icon-1320184028326496024.png"/>
                         </div>
-                        <div class="col-10">
+                        <div class="col-11">
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item" name="breadcrumb" target="breadService">service</li>
                                 <li class="breadcrumb-item" name="breadcrumb" target="breadHairdresser">hairdresser</li>
@@ -580,23 +596,23 @@
                 </div>
 
                 
-                <p>Please input your information so we can contact you</p>
+                <p>Please input your information so we can contact you for confirmation or any changes to your appointment.</p>
                 <div class="form-group row">
                     <label for="nameInput" class="col-2 col-form-label">Name</label>
                     <div class="col-10">
-                        <input class="form-control" type="text" id="nameInput" placeholder="Please enter your name here" onchange="updateBookingBtn();" onmouseleave="updateBookingBtn();" />
+                        <input class="form-control is-invalid" type="text" id="nameInput" placeholder="Please enter your name here" onchange="updateBookingBtn();" onmouseleave="updateBookingBtn();" />
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="emailInput" class="col-2 col-form-label">Email</label>
                     <div class="col-10">
-                        <input class="form-control" type="email" id="emailInput" placeholder="Please enter your email here" onchange="updateBookingBtn();" onmouseleave="updateBookingBtn();" />
+                        <input class="form-control is-invalid" type="email" id="emailInput" placeholder="Please enter your email here" onchange="updateBookingBtn();" onmouseleave="updateBookingBtn();" />
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="phoneInput" class="col-2 col-form-label">Phone</label>
                     <div class="col-10">
-                        <input class="form-control" type="tel" id="phoneInput" placeholder="Please enter your phone number" onchange="updateBookingBtn();" onmouseleave="updateBookingBtn();" />
+                        <input class="form-control is-invalid" type="tel" id="phoneInput" placeholder="Please enter your phone number" onchange="updateBookingBtn();" onmouseleave="updateBookingBtn();" />
                     </div>
                 </div>
                 <footer class="container">
@@ -610,12 +626,12 @@
 
             <div id="breadPayment" name="appointmentSection">
 
-                <div class="container">
+                <div class="container no-margin">
                     <div class="row">
-                        <div class="col-2">                            
+                        <div class="col-1">                            
                             <img class="icon" alt="logo" src="https://w7.pngwing.com/pngs/951/395/png-transparent-black-check-logo-payment-card-credit-card-computer-icons-cheque-payment-icon-credit-payment-icon-miscellaneous-text-trademark.png"/>
                         </div>
-                        <div class="col-10">
+                        <div class="col-11">
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item" name="breadcrumb" target="breadService">service</li>
                                 <li class="breadcrumb-item" name="breadcrumb" target="breadHairdresser">hairdresser</li>
@@ -628,7 +644,7 @@
                 </div>
 
                 
-                <p>To guarantee a reservation you need to input your payment information</p>
+                <p>To guarantee a reservation you need to input your payment information. This information is used in case you need to change your appointment or cancel it at the last minute.</p>
                 <div class="container mx-auto">
                     <!-- payment section -->
                     <div class="row center-content">                                
@@ -647,12 +663,12 @@
                                 
                                     <div class="form-group">
                                         <label for="username">Full name (on the card)</label>
-                                        <input type="text" name="paymentInfoField" placeholder="Jason Doe" required class="form-control">
+                                        <input type="text" name="paymentInfoField" placeholder="Jason Doe" required class="form-control is-invalid" id="nameFieldPayment">
                                     </div>
                                     <div class="form-group">
                                         <label for="cardNumber">Card number</label>
                                         <div class="input-group">
-                                            <input type="tel" name="paymentInfoField" id="cardNum" placeholder="Your card number" class="form-control" required>
+                                            <input type="tel" name="paymentInfoField" id="cardNum" placeholder="Your card number" class="form-control is-invalid" required>
                                             <div class="input-group-append">
                                                 <span class="input-group-text text-muted">
                                                     <i class="fa fa-cc-visa mx-1"></i>
@@ -667,8 +683,8 @@
                                             <div class="form-group">
                                                 <label><span class="hidden-xs">Expiration</span></label>
                                                     <div class="input-group">
-                                                        <input type="number" placeholder="MM" name="paymentInfoField" class="form-control" min="1" max="12" required>
-                                                        <input type="number" placeholder="YY" name="paymentInfoField" class="form-control" min="2020" required>
+                                                        <input type="number" placeholder="MM" name="paymentInfoField" class="form-control is-invalid" min="1" max="12" required id="paymentMonth">
+                                                        <input type="number" placeholder="YY" name="paymentInfoField" class="form-control is-invalid" min="2020" required id="paymentYear">
                                                     </div>
                                             </div>
                                         </div>
@@ -677,7 +693,7 @@
                                                 <label data-toggle="tooltip" title="Three-digits code on the back of your card">CVV
                                                     <i class="fa fa-question-circle"></i>
                                                 </label>
-                                                <input type="tel" min="0" max="999" name="paymentInfoField" id="cvvNum" required class="form-control" minlength="3" maxlength="3">
+                                                <input type="tel" min="0" max="999" name="paymentInfoField" id="cvvNum" required class="form-control is-invalid" minlength="3" maxlength="3">
                                             </div>
                                         </div>
                                     </div>
