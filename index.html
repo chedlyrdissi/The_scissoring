@@ -483,7 +483,7 @@
                         <tbody>
                             <tr name="table-row" value="no prefferences" target="hairdresserNext">
                                 <td class="checkbox-col">
-                                    <input type="radio" name="hairdresserChoice" value="no prefferences"/>
+                                    <input type="radio" name="hairdresserChoice" value="no preferences"/>
                                 </td>
                                 <td>No prefferences</td>
                             </tr>
@@ -531,16 +531,31 @@
                 <p>When are you available?</p>
                 <!-- Bootstrap has various input components. Some examples are given here: -->
                 <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
+                <div class="row">
+                    Hairdresser: <span id="chosenHairdresser"></span>
+                </div>
+                <div class="">
+                    Availability: <span id="avDays"></span>
+                </div>
                 <div class="form-group row">
                     <label for="dateTimeInput" class="col-2 col-form-label">Date and time</label>
                     <div class="col-10">
-                        <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="dateTimeInput" onchange="updateBookingBtn();" />
+                        <input 
+                            class="form-control" 
+                            type="datetime-local"
+                            value="2020-06-14T08:00:00"
+                            id="dateTimeInput"/>
                     </div>
+                </div>
+                <div class="row">
+                    <p class="alert alert-success" id="dateMsgSuccess">This date works for us</p>
+                    <p class="alert alert-danger" id="dateMsgDangerFormat">Date format is invalid. Please follow the format requested.</p>
+                    <p class="alert alert-danger" id="dateMsgDangerAv">The day you have chosen doesn't work for us.</p>
                 </div>
                 <footer class="container">
                     <div class="row center-content">
                         <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Choosing a date and time will unlock this button">
-                            <button class="btn btn-outline-primary" name="breadcrumb" target="breadPersonal">Add your personal information</button>             
+                            <button class="btn btn-outline-primary" id="dateNext" name="breadcrumb" target="breadPersonal">Add your personal information</button>             
                         </span>
                     </div>                   
                 </footer>
